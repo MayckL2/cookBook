@@ -22,7 +22,7 @@ const LogoScreen = () => {
   }).start();
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#5D5D5D' }}>
       <Animated.View style={{ opacity }}>
         <Image source={require('../assets/logo2.png')} />
       </Animated.View>
