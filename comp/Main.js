@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Card from './Card'
 import Header from './Header';
+import imagem from './img/ben10.jpg'
 
 export default function Main(){
     return(
@@ -14,11 +15,12 @@ export default function Main(){
             </Text>
 
             <Card
-            titulo={'miojo'}
-            desc={'descriçao'}
-            tipo={'tipo'}
-            dificuldade={'dificuldade'}
-            horario={'horario'}
+            titulo={'Bolo de Chocolate'}
+            desc={'Essa receita de bolo de chocolate com 3 ingredientes é assada em uma forma de 20 cm de diâmetro.'}
+            tipo={'Doce'}
+            dificuldade={'Médio'}
+            horario={'Lanche'}
+            img={imagem}
             />
             <Card
             titulo={'miojo'}
@@ -26,6 +28,7 @@ export default function Main(){
             tipo={'tipo'}
             dificuldade={'dificuldade'}
             horario={'horario'}
+            img={imagem}
             />
             <Card
             titulo={'miojo'}
@@ -33,6 +36,7 @@ export default function Main(){
             tipo={'tipo'}
             dificuldade={'dificuldade'}
             horario={'horario'}
+            img={imagem}
             />
             <Card
             titulo={'miojo'}
@@ -40,6 +44,7 @@ export default function Main(){
             tipo={'tipo'}
             dificuldade={'dificuldade'}
             horario={'horario'}
+            img={imagem}
             />
         </View>
         </ScrollView>
