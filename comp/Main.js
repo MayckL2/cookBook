@@ -1,9 +1,14 @@
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import Card from './Card'
+import Header from './Header';
 
 export default function Main(){
     return(
+        
+        <ScrollView>
+            <Header/>
         <View style={styles.main}>
+                
             <Text style={styles.titulo}>
                 Melhores Receitas
             </Text>
@@ -37,6 +42,7 @@ export default function Main(){
             horario={'horario'}
             />
         </View>
+        </ScrollView>
 
     )
 }

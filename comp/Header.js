@@ -1,10 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function Header(){
     return(
         <View style={styles.header}>
-            <Text>Header</Text>
+            <Image source={require('../assets/logo2.png')} style={styles.imgHeader} />
         </View>
     )
 }
@@ -19,4 +19,9 @@ const styles = StyleSheet.create({
             alignItems: 'center',
             justifyContent: 'center'
     },
+
+    imgHeader: {
+        width: '50%',
+        height: '50%'
+    }
   });
