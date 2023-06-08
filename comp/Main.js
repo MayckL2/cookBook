@@ -1,12 +1,24 @@
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import Card from './Card'
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import Card from './Card';
 import Header from './Header';
+import Receita from './receita';
 import imagem1 from './img/image1.png';
 import imagem2 from './img/image2.png';
 import imagem3 from './img/image3.png';
 import imagem4 from './img/image4.png';
+import { useState } from 'react';
+
+import { useNavigation } from '@react-navigation/native';
 
 export default function Main(){
+
+    const navigation = useNavigation();
+
+    function rotaReceita(){
+        navigation.replace('Receita');
+    }
+
+
     return(
         
         <ScrollView>
@@ -17,6 +29,7 @@ export default function Main(){
                 Melhores Receitas
             </Text>
 
+            <TouchableOpacity onPress={rotaReceita}>
             <Card
             titulo={'Bolo de Chocolate'}
             desc={'Essa receita de bolo de chocolate com 3 ingredientes é assada em uma forma de 20 cm de diâmetro.'}
@@ -25,6 +38,8 @@ export default function Main(){
             horario={'Lanche'}
             img={imagem1}
             />
+
+            </TouchableOpacity>
 
             <Card
             titulo={'Poke Havaiano'}

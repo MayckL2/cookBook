@@ -1,3 +1,6 @@
 {
-  "urlRandomness": "rXwwALc"
+  "urlRandomness": "rXwwALc",
+  "dev": true,
+  "minify": false,
+  "https": false
 }
