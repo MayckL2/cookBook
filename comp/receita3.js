@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, ScrollView, Button, TouchableOpacity, Image } from 'react-native';
 import Header from './Header';
-import bolo from './img/bolo-tela.png';
+import salada from './img/salada-tela.png';
 import icon1 from './img/icon-ingrediente.png';
 import icon2 from './img/icon-modo-de-fazer.png';
 import { useNavigation } from '@react-navigation/native';
@@ -20,15 +20,15 @@ export default function Receita() {
                 <TouchableOpacity onPress={voltarHome}><Text>Voltar</Text></TouchableOpacity>
 
                 <View style={styles.boxtitle}>
-                    <Text style={styles.title}>Bolo de chocolate</Text>
-                    <Text style={styles.tipo}>Doce</Text>
-                    <Text style={styles.horario}>Lanche</Text>
-                    <Text style={styles.difi}>Médio</Text>
+                    <Text style={styles.title}>Salada de Frutas</Text>
+                    <Text style={styles.tipo}>Sobremesa</Text>
+                    <Text style={styles.horario}>Café</Text>
+                    <Text style={styles.difi}>Fácil</Text>
                 </View>
 
                 <View style={styles.boximg}>
-                    <Image source={bolo} />
-                    <Text>Tempo de preparo: 45min</Text>
+                    <Image source={salada}/>
+                    <Text>Tempo de preparo: 10min</Text>
                 </View>
 
                 <View style={styles.ingredientes}>
@@ -37,17 +37,17 @@ export default function Receita() {
                 </View>
 
                 <Text style={styles.lista}>
-                • 4 ovos;{'\n'}
-                • 2 colheres (sopa) de manteiga;{'\n'}
-                • 2 xícaras (chá) de açúcar;{'\n'}
-                • 1 xícara (chá) de leite;{'\n'}
-                • 4 colheres (sopa) de chocolate em pó;{'\n'}
-                • 3 xícaras (chá) de farinha de trigo;{'\n'}
-                • 2 colheres (sopa) de fermento;{'\n'}
-                • 2 colheres (sopa) de manteiga;{'\n'}
-                • 2 latas de creme de leite com soro;{'\n'}
-                • 7 colheres (sopa) de chocolate em pó;{'\n'}
-                • 3 colheres (sopa) de açúcar;{'\n'}
+                • 2 mamões papaia pequenos;{'\n'}
+                • 5 bananas;{'\n'}
+                • 5 morangos maduros;{'\n'}
+                • 1 manga madura;{'\n'}
+                • 10 grãos de uva (qualquer variedade);{'\n'}
+                • 10 cubos de gelo;{'\n'}
+                • 1 laranja média;{'\n'}
+                • 2 maçãs;{'\n'}
+                • 1 pêssego;{'\n'}
+                • 1 caixa leite condensado (opcional);{'\n'}
+                • 1/2 colher (sopa) canela em pó;{'\n'}
                 </Text>
 
 
@@ -57,21 +57,12 @@ export default function Receita() {
                 </View>
 
                 <Text style={styles.lista}>
-                • Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha de trigo, o açúcar e o leite, depois bata por 5 minutos;{'\n'}
+                • Pique todos os ingredientes, a laranja em pedaços menores que as outras frutas, depois ela solta o caldo e a salada não fica tão ácida.;{'\n'}
 
-                • Adicione o fermento e misture com uma espátula delicadamente;{'\n'}
-
-                • Em uma forma untada, despeje a massa e asse em forno médio (180 ºC) preaquecido por cerca de 40 minutos. Não se esqueça de usar uma forma alta para essa receita: como leva duas colheres de fermento, ela cresce bastante! Outra solução pode ser colocar apenas uma colher de fermento e manter a sua receita em uma forma pequena;{'\n'}
-
-                • Em uma panela, aqueça a manteiga e misture o chocolate em pó até que esteja homogêneo;{'\n'}
-
-                • Desligue o fogo e acrescente o açúcar;{'\n'}
-
-
-
+                • Coloque tudo em um prato fundo e adicione o leite condensado (se quiser), a canela em pó e o gelo, mexa por alguns segundos e leve a geladeira por 30 minutos.;{'\n'}
 
                 </Text>
-            </View>
+            </View> 
         </ScrollView>
 
     )

@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         borderColor: '#DFDDDD',
-        // #D9D9D9
         borderBottomWidth: 4,
         borderRightWidth: 1,
         borderLeftWidth: 1,
@@ -46,17 +45,16 @@ const styles = StyleSheet.create({
     },
     titulo:{
         fontWeight: 'bold',
-        fontSize: 22,
+        fontSize: 18,
     },
     desc:{
         width: 200,
-        marginVertical: 10
+        marginBottom: 5,
     },
     cat:{
         display: 'flex',
         flexDirection: 'row',
         gap: 5
-        // justifyContent: 'space-around'
     },
     tipo:{
         backgroundColor: 'orange',
