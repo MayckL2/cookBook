@@ -12,6 +12,7 @@ import Receita4 from './comp/receita4';
 const Stack = createStackNavigator();
 
 const App = () => {
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Logo">

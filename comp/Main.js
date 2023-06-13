@@ -13,6 +13,7 @@ import { useState } from 'react';
 
 import { useNavigation } from '@react-navigation/native';
 
+
 export default function Main() {
 
     const navigation = useNavigation();
@@ -62,7 +63,7 @@ export default function Main() {
                         desc={'O Poke é um dos principais pratos da cozinha nativa havaiana. '}
                         tipo={'Salada'}
                         dificuldade={'Fácil'}
-                        horario={'Almoço'}
+                        horario={'Almoço '}
                         img={imagem2}
                     />
 
@@ -88,7 +89,7 @@ export default function Main() {
                         desc={'Carne com batata é um prato clássico e saboroso que combina carne, geralmente bovina, com batatas. '}
                         tipo={'Principal'}
                         dificuldade={'Médio'}
-                        horario={'Almoço'}
+                        horario={'Almoço '}
                         img={imagem4}
                     />
 

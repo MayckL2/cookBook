@@ -4,8 +4,24 @@ import salada from './img/salada-tela.png';
 import icon1 from './img/icon-ingrediente.png';
 import icon2 from './img/icon-modo-de-fazer.png';
 import { useNavigation } from '@react-navigation/native';
+import { useState, useEffect } from 'react';
+import * as Font from 'expo-font';
 
 export default function Receita() {
+    const [fontLoaded, setFontLoaded] = useState(false);
+
+    const loadFonts = async () => {
+        await Font.loadAsync({
+          'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
+          'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
+          // Adicione outras variações da fonte Poppins, se houver
+        });
+        setFontLoaded(true);
+      };
+      
+      useEffect(() => {
+        loadFonts();
+      }, []);
     const navigation = useNavigation();
 
     function voltarHome() {
@@ -20,15 +36,15 @@ export default function Receita() {
                 <TouchableOpacity onPress={voltarHome}><Text>Voltar</Text></TouchableOpacity>
 
                 <View style={styles.boxtitle}>
-                    <Text style={styles.title}>Salada de Frutas</Text>
-                    <Text style={styles.tipo}>Sobremesa</Text>
-                    <Text style={styles.horario}>Café</Text>
-                    <Text style={styles.difi}>Fácil</Text>
+                    <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Salada de Frutas</Text>
+                    <Text style={[styles.tipo, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Sobremesa</Text>
+                    <Text style={[styles.horario, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Café</Text>
+                    <Text style={[styles.difi, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Fácil</Text>
                 </View>
 
                 <View style={styles.boximg}>
                     <Image source={salada}/>
-                    <Text>Tempo de preparo: 10min</Text>
+                    <Text>Tempo de preparo: 10min </Text>
                 </View>
 
                 <View style={styles.ingredientes}>
@@ -36,7 +52,7 @@ export default function Receita() {
                     <Text style={styles.subtitle}>Ingredientes</Text>
                 </View>
 
-                <Text style={styles.lista}>
+                <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 16 } : {}]}>
                 • 2 mamões papaia pequenos;{'\n'}
                 • 5 bananas;{'\n'}
                 • 5 morangos maduros;{'\n'}
@@ -56,7 +72,7 @@ export default function Receita() {
                     <Text style={styles.subtitle}>Modo de fazer</Text>
                 </View>
 
-                <Text style={styles.lista}>
+                <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 16 } : {}]}>
                 • Pique todos os ingredientes, a laranja em pedaços menores que as outras frutas, depois ela solta o caldo e a salada não fica tão ácida.;{'\n'}
 
                 • Coloque tudo em um prato fundo e adicione o leite condensado (se quiser), a canela em pó e o gelo, mexa por alguns segundos e leve a geladeira por 30 minutos.;{'\n'}
@@ -93,22 +109,22 @@ const styles = StyleSheet.create({
     },
     tipo: {
         backgroundColor: 'orange',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },
     horario: {
         backgroundColor: '#FF914D',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },
     difi: {
         backgroundColor: '#00D956',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },

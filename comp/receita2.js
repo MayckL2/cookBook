@@ -4,8 +4,24 @@ import poke from './img/poke-tela.png';
 import icon1 from './img/icon-ingrediente.png';
 import icon2 from './img/icon-modo-de-fazer.png';
 import { useNavigation } from '@react-navigation/native';
+import { useState, useEffect } from 'react';
+import * as Font from 'expo-font';
 
 export default function Receita() {
+    const [fontLoaded, setFontLoaded] = useState(false);
+
+    const loadFonts = async () => {
+        await Font.loadAsync({
+          'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
+          'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
+          // Adicione outras variações da fonte Poppins, se houver
+        });
+        setFontLoaded(true);
+      };
+      
+      useEffect(() => {
+        loadFonts();
+      }, []);
     const navigation = useNavigation();
 
     function voltarHome() {
@@ -20,15 +36,15 @@ export default function Receita() {
                 <TouchableOpacity onPress={voltarHome}><Text>Voltar</Text></TouchableOpacity>
 
                 <View style={styles.boxtitle}>
-                    <Text style={styles.title}>Poke Havaiano</Text>
-                    <Text style={styles.tipo}>Salada</Text>
-                    <Text style={styles.horario}>Almoço</Text>
-                    <Text style={styles.difi}>Fácil</Text>
+                    <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Poke Havaiano</Text>
+                    <Text style={[styles.tipo, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Salada</Text>
+                    <Text style={[styles.horario, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Almoço</Text>
+                    <Text style={[styles.difi, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Fácil</Text>
                 </View>
 
                 <View style={styles.boximg}>
                     <Image source={poke}/>
-                    <Text>Tempo de preparo: 30min</Text>
+                    <Text>Tempo de preparo: 30min </Text>
                 </View>
 
                 <View style={styles.ingredientes}>
@@ -36,7 +52,7 @@ export default function Receita() {
                     <Text style={styles.subtitle}>Ingredientes</Text>
                 </View>
 
-                <Text style={styles.lista}>
+                <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 16 } : {}]}>
                 • 1 colher de sopa de gergelim preto;{'\n'}
                 • 500gr de salmão fresco em cubos, sem pele e sem espinha;{'\n'}
                 • ¼ de xícara de coco em floco, sem açúcar;{'\n'}
@@ -59,7 +75,7 @@ export default function Receita() {
                     <Text style={styles.subtitle}>Modo de fazer</Text>
                 </View>
 
-                <Text style={styles.lista}>
+                <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 16 } : {}]}>
                 • Em uma panela com fogo baixo, adicione o leite de coco, a água e o sal, mexa bem até ferver;{'\n'}
 
                 • Estando fervendo, acrescente o arroz, mexa novamente e deixe cozinhar por 10 minutos em fogo médio;{'\n'}
@@ -113,22 +129,22 @@ const styles = StyleSheet.create({
     },
     tipo: {
         backgroundColor: 'orange',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },
     horario: {
         backgroundColor: '#FF914D',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },
     difi: {
         backgroundColor: '#00D956',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },
@@ -164,7 +180,7 @@ const styles = StyleSheet.create({
 
     lista:{
         fontSize: 16,
-        lineHeight: 24,
+        lineHeight: 27,
     },
 
 

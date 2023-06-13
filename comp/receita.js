@@ -4,8 +4,25 @@ import bolo from './img/bolo-tela.png';
 import icon1 from './img/icon-ingrediente.png';
 import icon2 from './img/icon-modo-de-fazer.png';
 import { useNavigation } from '@react-navigation/native';
+import { useState, useEffect } from 'react';
+import * as Font from 'expo-font';
+
 
 export default function Receita() {
+    const [fontLoaded, setFontLoaded] = useState(false);
+
+    const loadFonts = async () => {
+        await Font.loadAsync({
+          'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
+          'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
+          // Adicione outras variações da fonte Poppins, se houver
+        });
+        setFontLoaded(true);
+      };
+      
+      useEffect(() => {
+        loadFonts();
+      }, []);
     const navigation = useNavigation();
 
     function voltarHome() {
@@ -20,7 +37,7 @@ export default function Receita() {
                 <TouchableOpacity onPress={voltarHome}><Text>Voltar</Text></TouchableOpacity>
 
                 <View style={styles.boxtitle}>
-                    <Text style={styles.title}>Bolo de chocolate</Text>
+                    <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Bolo de chocolate</Text>
                     <Text style={styles.tipo}>Doce</Text>
                     <Text style={styles.horario}>Lanche</Text>
                     <Text style={styles.difi}>Médio</Text>
@@ -36,7 +53,7 @@ export default function Receita() {
                     <Text style={styles.subtitle}>Ingredientes</Text>
                 </View>
 
-                <Text style={styles.lista}>
+                <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 18 } : {}]}>
                 • 4 ovos;{'\n'}
                 • 2 colheres (sopa) de manteiga;{'\n'}
                 • 2 xícaras (chá) de açúcar;{'\n'}
@@ -56,7 +73,7 @@ export default function Receita() {
                     <Text style={styles.subtitle}>Modo de fazer</Text>
                 </View>
 
-                <Text style={styles.lista}>
+                <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 18 } : {}]}>
                 • Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha de trigo, o açúcar e o leite, depois bata por 5 minutos;{'\n'}
 
                 • Adicione o fermento e misture com uma espátula delicadamente;{'\n'}
@@ -86,7 +103,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         marginTop: -15,
         height: 'auto',
-        padding: 50
+        padding: 50,
     },
     boxtitle: {
         flex: 1,
@@ -102,22 +119,22 @@ const styles = StyleSheet.create({
     },
     tipo: {
         backgroundColor: 'orange',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },
     horario: {
         backgroundColor: '#FF914D',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },
     difi: {
         backgroundColor: '#00D956',
-        paddingHorizontal: 10,
-        paddingVertical: 2,
+        paddingHorizontal: 12,
+        paddingVertical: 4,
         borderRadius: 8,
         color: 'white'
     },
@@ -153,7 +170,7 @@ const styles = StyleSheet.create({
 
     lista:{
         fontSize: 16,
-        lineHeight: 24,
+        lineHeight: 27,
     },
 
 
