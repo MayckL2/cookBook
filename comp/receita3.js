@@ -6,6 +6,7 @@ import icon2 from './img/icon-modo-de-fazer.png';
 import { useNavigation } from '@react-navigation/native';
 import { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
+import arrow from './img/arrow.png';
 
 export default function Receita() {
     const [fontLoaded, setFontLoaded] = useState(false);
@@ -33,7 +34,9 @@ export default function Receita() {
             <Header />
             <View style={styles.main}>
 
-                <TouchableOpacity onPress={voltarHome}><Text>Voltar</Text></TouchableOpacity>
+            <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
+                <Image source={arrow} style={styles.arrow}></Image>
+            </TouchableOpacity>
 
                 <View style={styles.boxtitle}>
                     <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Salada de Frutas</Text>
@@ -162,6 +165,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 24,
     },
+    arrow:{
+        position: 'absolute',
+        left: 5,
+        top: 5,
+        width: 50,
+        height: 50,
+    }
 
 
 });
