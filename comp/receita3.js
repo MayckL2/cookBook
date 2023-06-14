@@ -13,16 +13,16 @@ export default function Receita() {
 
     const loadFonts = async () => {
         await Font.loadAsync({
-          'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
-          'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
-          // Adicione outras variações da fonte Poppins, se houver
+            'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
+            'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
+            // Adicione outras variações da fonte Poppins, se houver
         });
         setFontLoaded(true);
-      };
-      
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         loadFonts();
-      }, []);
+    }, []);
     const navigation = useNavigation();
 
     function voltarHome() {
@@ -34,19 +34,19 @@ export default function Receita() {
             <Header />
             <View style={styles.main}>
 
-            <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
-                <Image source={arrow} style={styles.arrow}></Image>
-            </TouchableOpacity>
+                <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
+                    <Image source={arrow} style={styles.arrow}></Image>
+                </TouchableOpacity>
 
+                <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Salada de Frutas</Text>
                 <View style={styles.boxtitle}>
-                    <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Salada de Frutas</Text>
                     <Text style={[styles.tipo, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Sobremesa</Text>
                     <Text style={[styles.horario, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Café</Text>
                     <Text style={[styles.difi, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Fácil</Text>
                 </View>
 
                 <View style={styles.boximg}>
-                    <Image source={salada}/>
+                    <Image source={salada} />
                     <Text>Tempo de preparo: 10min </Text>
                 </View>
 
@@ -56,17 +56,17 @@ export default function Receita() {
                 </View>
 
                 <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 16 } : {}]}>
-                • 2 mamões papaia pequenos;{'\n'}
-                • 5 bananas;{'\n'}
-                • 5 morangos maduros;{'\n'}
-                • 1 manga madura;{'\n'}
-                • 10 grãos de uva (qualquer variedade);{'\n'}
-                • 10 cubos de gelo;{'\n'}
-                • 1 laranja média;{'\n'}
-                • 2 maçãs;{'\n'}
-                • 1 pêssego;{'\n'}
-                • 1 caixa leite condensado (opcional);{'\n'}
-                • 1/2 colher (sopa) canela em pó;{'\n'}
+                    • 2 mamões papaia pequenos;{'\n'}
+                    • 5 bananas;{'\n'}
+                    • 5 morangos maduros;{'\n'}
+                    • 1 manga madura;{'\n'}
+                    • 10 grãos de uva (qualquer variedade);{'\n'}
+                    • 10 cubos de gelo;{'\n'}
+                    • 1 laranja média;{'\n'}
+                    • 2 maçãs;{'\n'}
+                    • 1 pêssego;{'\n'}
+                    • 1 caixa leite condensado (opcional);{'\n'}
+                    • 1/2 colher (sopa) canela em pó;{'\n'}
                 </Text>
 
 
@@ -76,12 +76,12 @@ export default function Receita() {
                 </View>
 
                 <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 16 } : {}]}>
-                • Pique todos os ingredientes, a laranja em pedaços menores que as outras frutas, depois ela solta o caldo e a salada não fica tão ácida.;{'\n'}
+                    • Pique todos os ingredientes, a laranja em pedaços menores que as outras frutas, depois ela solta o caldo e a salada não fica tão ácida.;{'\n'}
 
-                • Coloque tudo em um prato fundo e adicione o leite condensado (se quiser), a canela em pó e o gelo, mexa por alguns segundos e leve a geladeira por 30 minutos.;{'\n'}
+                    • Coloque tudo em um prato fundo e adicione o leite condensado (se quiser), a canela em pó e o gelo, mexa por alguns segundos e leve a geladeira por 30 minutos.;{'\n'}
 
                 </Text>
-            </View> 
+            </View>
         </ScrollView>
 
     )
@@ -104,11 +104,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         gap: 10,
         padding: 10,
-        marginTop: 30
+        marginTop: 10
     },
     title: {
         fontSize: 20,
-        fontWeight: '600'
+        fontWeight: '600',
+        marginTop: 30
     },
     tipo: {
         backgroundColor: 'orange',
@@ -161,11 +162,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
 
-    lista:{
+    lista: {
         fontSize: 16,
         lineHeight: 24,
     },
-    arrow:{
+    arrow: {
         position: 'absolute',
         left: 5,
         top: 5,

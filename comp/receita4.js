@@ -13,16 +13,16 @@ export default function Receita() {
 
     const loadFonts = async () => {
         await Font.loadAsync({
-          'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
-          'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
-          // Adicione outras variações da fonte Poppins, se houver
+            'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
+            'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
+            // Adicione outras variações da fonte Poppins, se houver
         });
         setFontLoaded(true);
-      };
-      
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         loadFonts();
-      }, []);
+    }, []);
     const navigation = useNavigation();
 
     function voltarHome() {
@@ -34,13 +34,14 @@ export default function Receita() {
             <Header />
             <View style={styles.main}>
 
-            <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
-                <Image source={arrow} style={styles.arrow}></Image>
+                <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
+                    <Image source={arrow} style={styles.arrow}></Image>
 
-            </TouchableOpacity>
+                </TouchableOpacity>
+
+                <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Carne com batata</Text>
 
                 <View style={styles.boxtitle}>
-                    <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Carne com batata</Text>
                     <Text style={[styles.tipo, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Principal</Text>
                     <Text style={[styles.horario, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Almoço</Text>
                     <Text style={[styles.difi, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Médio</Text>
@@ -107,11 +108,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         gap: 10,
         padding: 10,
-        marginTop: 30
+        marginTop: 10
     },
     title: {
         fontSize: 20,
-        fontWeight: '600'
+        fontWeight: '600',
+        marginTop: 30
     },
     tipo: {
         backgroundColor: 'orange',
@@ -168,7 +170,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 24,
     },
-    arrow:{
+    arrow: {
         position: 'absolute',
         left: 5,
         top: 5,

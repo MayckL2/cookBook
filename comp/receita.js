@@ -14,16 +14,16 @@ export default function Receita() {
 
     const loadFonts = async () => {
         await Font.loadAsync({
-          'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
-          'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
-          // Adicione outras variações da fonte Poppins, se houver
+            'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
+            'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
+            // Adicione outras variações da fonte Poppins, se houver
         });
         setFontLoaded(true);
-      };
-      
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         loadFonts();
-      }, []);
+    }, []);
     const navigation = useNavigation();
 
     function voltarHome() {
@@ -32,15 +32,15 @@ export default function Receita() {
     return (
 
         <ScrollView>
-            <Header/>
+            <Header />
             <View style={styles.main}>
-            <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
-                <Image source={arrow} style={styles.arrow}></Image>
+                <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
+                    <Image source={arrow} style={styles.arrow}></Image>
 
-            </TouchableOpacity>
+                </TouchableOpacity>
 
+                <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Bolo de chocolate</Text>
                 <View style={styles.boxtitle}>
-                    <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Bolo de chocolate</Text>
                     <Text style={styles.tipo}>Doce</Text>
                     <Text style={styles.horario}>Lanche</Text>
                     <Text style={styles.difi}>Médio</Text>
@@ -57,17 +57,17 @@ export default function Receita() {
                 </View>
 
                 <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 18 } : {}]}>
-                • 4 ovos;{'\n'}
-                • 2 colheres (sopa) de manteiga;{'\n'}
-                • 2 xícaras (chá) de açúcar;{'\n'}
-                • 1 xícara (chá) de leite;{'\n'}
-                • 4 colheres (sopa) de chocolate em pó;{'\n'}
-                • 3 xícaras (chá) de farinha de trigo;{'\n'}
-                • 2 colheres (sopa) de fermento;{'\n'}
-                • 2 colheres (sopa) de manteiga;{'\n'}
-                • 2 latas de creme de leite com soro;{'\n'}
-                • 7 colheres (sopa) de chocolate em pó;{'\n'}
-                • 3 colheres (sopa) de açúcar;{'\n'}
+                    • 4 ovos;{'\n'}
+                    • 2 colheres (sopa) de manteiga;{'\n'}
+                    • 2 xícaras (chá) de açúcar;{'\n'}
+                    • 1 xícara (chá) de leite;{'\n'}
+                    • 4 colheres (sopa) de chocolate em pó;{'\n'}
+                    • 3 xícaras (chá) de farinha de trigo;{'\n'}
+                    • 2 colheres (sopa) de fermento;{'\n'}
+                    • 2 colheres (sopa) de manteiga;{'\n'}
+                    • 2 latas de creme de leite com soro;{'\n'}
+                    • 7 colheres (sopa) de chocolate em pó;{'\n'}
+                    • 3 colheres (sopa) de açúcar;{'\n'}
                 </Text>
 
 
@@ -77,15 +77,15 @@ export default function Receita() {
                 </View>
 
                 <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 18 } : {}]}>
-                • Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha de trigo, o açúcar e o leite, depois bata por 5 minutos;{'\n'}
+                    • Em um liquidificador adicione os ovos, o chocolate em pó, a manteiga, a farinha de trigo, o açúcar e o leite, depois bata por 5 minutos;{'\n'}
 
-                • Adicione o fermento e misture com uma espátula delicadamente;{'\n'}
+                    • Adicione o fermento e misture com uma espátula delicadamente;{'\n'}
 
-                • Em uma forma untada, despeje a massa e asse em forno médio (180 ºC) preaquecido por cerca de 40 minutos. Não se esqueça de usar uma forma alta para essa receita: como leva duas colheres de fermento, ela cresce bastante! Outra solução pode ser colocar apenas uma colher de fermento e manter a sua receita em uma forma pequena;{'\n'}
+                    • Em uma forma untada, despeje a massa e asse em forno médio (180 ºC) preaquecido por cerca de 40 minutos. Não se esqueça de usar uma forma alta para essa receita: como leva duas colheres de fermento, ela cresce bastante! Outra solução pode ser colocar apenas uma colher de fermento e manter a sua receita em uma forma pequena;{'\n'}
 
-                • Em uma panela, aqueça a manteiga e misture o chocolate em pó até que esteja homogêneo;{'\n'}
+                    • Em uma panela, aqueça a manteiga e misture o chocolate em pó até que esteja homogêneo;{'\n'}
 
-                • Desligue o fogo e acrescente o açúcar;{'\n'}
+                    • Desligue o fogo e acrescente o açúcar;{'\n'}
 
 
 
@@ -114,11 +114,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         gap: 10,
         padding: 10,
-        marginTop: 30
+        marginTop: 10
     },
     title: {
         fontSize: 20,
-        fontWeight: '600'
+        fontWeight: '600',
+        marginTop: 10
     },
     tipo: {
         backgroundColor: 'orange',
@@ -171,12 +172,12 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
 
-    lista:{
+    lista: {
         fontSize: 16,
         lineHeight: 27,
     },
 
-    arrow:{
+    arrow: {
         position: 'absolute',
         left: 5,
         top: 5,

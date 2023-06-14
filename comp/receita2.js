@@ -14,16 +14,16 @@ export default function Receita() {
 
     const loadFonts = async () => {
         await Font.loadAsync({
-          'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
-          'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
-          // Adicione outras variações da fonte Poppins, se houver
+            'poppins-regular': require('../assets/fonts/Poppins-Regular.ttf'),
+            'poppins-extrabold': require('../assets/fonts/Poppins-ExtraBold.ttf'),
+            // Adicione outras variações da fonte Poppins, se houver
         });
         setFontLoaded(true);
-      };
-      
-      useEffect(() => {
+    };
+
+    useEffect(() => {
         loadFonts();
-      }, []);
+    }, []);
     const navigation = useNavigation();
 
     function voltarHome() {
@@ -35,20 +35,20 @@ export default function Receita() {
             <Header />
             <View style={styles.main}>
 
-            <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
-                <Image source={arrow} style={styles.arrow}></Image>
+                <TouchableOpacity onPress={voltarHome} style={styles.arrow}>
+                    <Image source={arrow} style={styles.arrow}></Image>
 
-            </TouchableOpacity>
+                </TouchableOpacity>
 
+                <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Poke Havaiano</Text>
                 <View style={styles.boxtitle}>
-                    <Text style={[styles.title, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 20 } : {}]}>Poke Havaiano</Text>
                     <Text style={[styles.tipo, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Salada</Text>
                     <Text style={[styles.horario, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Almoço</Text>
                     <Text style={[styles.difi, fontLoaded ? { fontFamily: 'poppins-extrabold', fontSize: 12 } : {}]}>Fácil</Text>
                 </View>
 
                 <View style={styles.boximg}>
-                    <Image source={poke}/>
+                    <Image source={poke} />
                     <Text>Tempo de preparo: 30min </Text>
                 </View>
 
@@ -58,20 +58,20 @@ export default function Receita() {
                 </View>
 
                 <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 16 } : {}]}>
-                • 1 colher de sopa de gergelim preto;{'\n'}
-                • 500gr de salmão fresco em cubos, sem pele e sem espinha;{'\n'}
-                • ¼ de xícara de coco em floco, sem açúcar;{'\n'}
-                • 1 manga madura;{'\n'}
-                • 2 colheres de sopa de shoyu;{'\n'}
-                • 1 pimenta dedo-de-moça fresca;{'\n'}
-                • 2 colheres de sopa de óleo de gergelim;{'\n'}
-                • 1 abacate (avocado);{'\n'}
-                • 2 colheres de sopa de sriracha;{'\n'}
-                • 1 ½ xícara(chá) de arroz basmati ou jasmim;{'\n'}
-                • 1 xícara de leite de coco;{'\n'}
-                • Cebolinha a gosto;{'\n'}
-                • 1 ¼ xícara de água;{'\n'}
-                • Pepino e nabo e cenoura opcional;{'\n'}
+                    • 1 colher de sopa de gergelim preto;{'\n'}
+                    • 500gr de salmão fresco em cubos, sem pele e sem espinha;{'\n'}
+                    • ¼ de xícara de coco em floco, sem açúcar;{'\n'}
+                    • 1 manga madura;{'\n'}
+                    • 2 colheres de sopa de shoyu;{'\n'}
+                    • 1 pimenta dedo-de-moça fresca;{'\n'}
+                    • 2 colheres de sopa de óleo de gergelim;{'\n'}
+                    • 1 abacate (avocado);{'\n'}
+                    • 2 colheres de sopa de sriracha;{'\n'}
+                    • 1 ½ xícara(chá) de arroz basmati ou jasmim;{'\n'}
+                    • 1 xícara de leite de coco;{'\n'}
+                    • Cebolinha a gosto;{'\n'}
+                    • 1 ¼ xícara de água;{'\n'}
+                    • Pepino e nabo e cenoura opcional;{'\n'}
                 </Text>
 
 
@@ -81,23 +81,23 @@ export default function Receita() {
                 </View>
 
                 <Text style={[styles.lista, fontLoaded ? { fontFamily: 'poppins-regular', fontSize: 16 } : {}]}>
-                • Em uma panela com fogo baixo, adicione o leite de coco, a água e o sal, mexa bem até ferver;{'\n'}
+                    • Em uma panela com fogo baixo, adicione o leite de coco, a água e o sal, mexa bem até ferver;{'\n'}
 
-                • Estando fervendo, acrescente o arroz, mexa novamente e deixe cozinhar por 10 minutos em fogo médio;{'\n'}
+                    • Estando fervendo, acrescente o arroz, mexa novamente e deixe cozinhar por 10 minutos em fogo médio;{'\n'}
 
-                • Em uma tigela, prepare a marinada o salmão com shoyu, óleo de gergelim e sriracha; misture bem e deixe reservada;{'\n'}
+                    • Em uma tigela, prepare a marinada o salmão com shoyu, óleo de gergelim e sriracha; misture bem e deixe reservada;{'\n'}
 
-                • Corte o salmão fresco em cubos e o deixe marinar na mistura. Após, tempere-o com pimenta dedo de moça sem as semente e cebolinha picada;{'\n'}
+                    • Corte o salmão fresco em cubos e o deixe marinar na mistura. Após, tempere-o com pimenta dedo de moça sem as semente e cebolinha picada;{'\n'}
 
-                • Pique a manga e o abacate em pequenos cubos;{'\n'}
+                    • Pique a manga e o abacate em pequenos cubos;{'\n'}
 
-                • Deixa o coco flocado tostar por alguns minutos em uma frigideira;{'\n'}
+                    • Deixa o coco flocado tostar por alguns minutos em uma frigideira;{'\n'}
 
-                • Em um prato, coloque uma camada de arroz cozido;{'\n'}
+                    • Em um prato, coloque uma camada de arroz cozido;{'\n'}
 
-                • Sobre esta camada, coloque a manga, o abacate e o salmão;{'\n'}
+                    • Sobre esta camada, coloque a manga, o abacate e o salmão;{'\n'}
 
-                • Para decorar, finalize adicionando o coco tostado e sementes de gergelim;{'\n'}
+                    • Para decorar, finalize adicionando o coco tostado e sementes de gergelim;{'\n'}
 
 
 
@@ -126,11 +126,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         gap: 10,
         padding: 10,
-        marginTop: 30
+        marginTop: 10
     },
     title: {
         fontSize: 20,
-        fontWeight: '600'
+        fontWeight: '600',
+        marginTop: 30
     },
     tipo: {
         backgroundColor: 'orange',
@@ -183,11 +184,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
     },
 
-    lista:{
+    lista: {
         fontSize: 16,
         lineHeight: 27,
     },
-    arrow:{
+    arrow: {
         position: 'absolute',
         left: 5,
         top: 5,

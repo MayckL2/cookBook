@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     desc:{
-        width: 200,
+        width: 220,
         marginBottom: 5,
     },
     cat:{

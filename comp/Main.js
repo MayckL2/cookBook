@@ -44,7 +44,7 @@ export default function Main() {
                     Melhores Receitas
                 </Text>
 
-                <TouchableOpacity onPress={rotaReceita}>
+                <TouchableOpacity onPress={rotaReceita} style={styles.cardClick}>
                     <Card
                         titulo={'Bolo de Chocolate'}
                         desc={'Essa receita de bolo de chocolate com 3 ingredientes é assada em uma forma de 20 cm de diâmetro.'}
@@ -56,7 +56,7 @@ export default function Main() {
 
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={rotaReceita2}>
+                <TouchableOpacity onPress={rotaReceita2} style={styles.cardClick}>
 
                     <Card
                         titulo={'Poke Havaiano'}
@@ -69,7 +69,7 @@ export default function Main() {
 
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={rotaReceita3}>
+                <TouchableOpacity onPress={rotaReceita3} style={styles.cardClick}>
 
                     <Card
                         titulo={'Salada de Frutas'}
@@ -82,7 +82,7 @@ export default function Main() {
 
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={rotaReceita4}>
+                <TouchableOpacity onPress={rotaReceita4} style={styles.cardClick}>
 
                     <Card
                         titulo={'Carne com Batata'}
@@ -116,5 +116,9 @@ const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: 'bold',
         margin: 20
+    },
+
+    cardClick: {
+        width: '100%'
     }
 });
