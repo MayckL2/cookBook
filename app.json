@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.chronodd.cookBook"
     },
     "web": {
       "favicon": "./assets/logo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "193b7044-2bb1-46f2-a7e0-de0701328bae"
+      }
     }
   }
 }
